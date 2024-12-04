@@ -51,10 +51,10 @@
     <!-- Choose GPA or CGPA -->
     <header>
       <div role="tablist" class="tabs tabs-boxed mt-10">
-        <a onclick="hideCGPA()" role="tab" class="tab tab-active" id="GPAID"
+        <a onclick="hideCGPA()" role="tab" class="tab tab-active" id="gpa-tab" 
           >GPA</a
         >
-        <a onclick="hideGPA()" role="tab" class="tab" id="CGPAID">CGPA</a>
+        <a onclick="hideGPA()" role="tab" class="tab" id="cgpa-tab" >CGPA</a>
       </div>
     </header>
 
@@ -64,39 +64,51 @@
     </div>
 
     <!-- Body of the Calculator -->
-    <section class="flex justify-around sm:flex-row-2">
-      <!-- CGPA Section -->
-       <!-- GPA Section -->
-  <div id="gpa" class="bg-white shadow-lg p-5 rounded-lg">
-    <div class="overflow-x-auto">
-      <table class="table-auto w-full border-collapse border border-gray-300">
-        <!-- Table Head -->
-        <thead>
-          <tr class="bg-gray-200 text-gray-700">
-            <th class="text-lg text-center border border-gray-300 py-2">Serial No.</th>
-            <th class="text-lg text-center border border-gray-300 py-2">Semester Name</th>
-            <th class="text-lg text-center border border-gray-300 py-2">Earned Credit</th>
-            <th class="text-lg text-center border border-gray-300 py-2">GPA</th>
-            <th class="text-lg text-center border border-gray-300 py-2">Action</th>
-          </tr>
-        </thead>
-        <!-- Table Body -->
-        <tbody id="gpaTableBody">
-          <!-- Rows will be dynamically added here -->
-        </tbody>
-      </table>
+    <section class="flex justify-around">
+      <!-- GPA Section -->
 
-      <!-- Buttons to add rows -->
-      <div class="flex justify-end mt-5">
-        <button
-          onclick="addNewSemesterRow()"
-          class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
-        >
-          Add 1 More Semester
-        </button>
+      <div id="cgpa" class="bg-white shadow-lg p-5 rounded-lg hidden">
+        <div class="overflow-x-auto">
+          <table
+            class="table-auto w-full border-collapse border border-gray-300"
+          >
+            <!-- Table Head -->
+            <thead>
+              <tr class="bg-gray-200 text-gray-700">
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Serial No.
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Semester Name
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Earned Credit
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  GPA
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody id="gpaTableBody">
+              <!-- Rows will be dynamically added here -->
+            </tbody>
+          </table>
+
+          <!-- Buttons to add rows -->
+          <div class="flex justify-end mt-5">
+            <button
+              onclick="addNewSemesterRow()"
+              class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
+            >
+              Add 1 More Semester
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
 
 
@@ -105,7 +117,7 @@
 
 
       <!-- GPA Section -->
-      <div id="gpa" class="hidden">
+      <div id="gpa" class="">
         <div class="overflow-x-auto">
           <table class="table">
             <!-- head -->
