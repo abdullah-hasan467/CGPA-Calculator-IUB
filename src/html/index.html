@@ -65,60 +65,38 @@
 
     <!-- Body of the Calculator -->
     <section class="flex justify-around sm:flex-row-2">
-      <!-- Calculator body CGPA -->
-      <!-- Calculator body CGPA -->
-<div id="cgpa" class="hidden">
-  <div class="overflow-x-auto">
-    <table class="table">
-      <!-- head -->
-      <thead>
-        <tr class="hover">
-          <th class="text-lg text-center">Serial No.</th>
-          <th class="text-lg text-center">Semester Name</th>
-          <th class="text-lg text-center">GPA</th>
-          <th class="text-lg text-center">Action</th>
-        </tr>
-      </thead>
-      <tbody id="cgpaTableBody">
-        <!-- Row 1 -->
-        <tr class="hover rounded-lg">
-          <th>1</th>
-          <td>
-            <label class="input input-bordered flex items-center gap-2">
-              <input type="text" class="grow" placeholder="Summer 2021" />
-              <span class="badge badge-info">Optional</span>
-            </label>
-          </td>
-          <td>
-            <input
-              type="number"
-              placeholder="GPA"
-              class="input input-bordered input-primary w-full max-w-xs"
-              max="4"
-              min="0"
-              id="gpaID-1"
-            />
-          </td>
-          <td class="text-center">
-            <button onclick="deleteRowCGPA(this)" class="btn btn-warning">
-              Delete
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- CGPA Section -->
+       <!-- GPA Section -->
+  <div id="gpa" class="bg-white shadow-lg p-5 rounded-lg">
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full border-collapse border border-gray-300">
+        <!-- Table Head -->
+        <thead>
+          <tr class="bg-gray-200 text-gray-700">
+            <th class="text-lg text-center border border-gray-300 py-2">Serial No.</th>
+            <th class="text-lg text-center border border-gray-300 py-2">Semester Name</th>
+            <th class="text-lg text-center border border-gray-300 py-2">Earned Credit</th>
+            <th class="text-lg text-center border border-gray-300 py-2">GPA</th>
+            <th class="text-lg text-center border border-gray-300 py-2">Action</th>
+          </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody id="gpaTableBody">
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
 
-    <!-- Buttons to add and delete rows -->
-    <div class="flex justify-end">
-      <button
-        onclick="addMoreRowCGPA()"
-        class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5"
-      >
-        Add 1 More Semester
-      </button>
+      <!-- Buttons to add rows -->
+      <div class="flex justify-end mt-5">
+        <button
+          onclick="addNewSemesterRow()"
+          class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
+        >
+          Add 1 More Semester
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
 
 
@@ -126,10 +104,7 @@
 
 
 
-
-
-
-      <!-- Calculator body GPA -->
+      <!-- GPA Section -->
       <div id="gpa" class="hidden">
         <div class="overflow-x-auto">
           <table class="table">
@@ -234,6 +209,8 @@
     >
       <p class="text-lg">Copyright © Hasan © 2024 - All rights reserved</p>
     </footer>
+
+    <script src="../js/cgpa.js"></script>
     <script src="../js/script.js"></script>
   </body>
 </html>
