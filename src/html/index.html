@@ -16,7 +16,7 @@
           <a
             href="https://iub.ac.bd/document/Notification%20regarding%20Spring%202024%20Semester%20or%20Trimester%20Final%20Examinations%20and%20Grade%20Submission.pdf"
             target="_blank"
-            class="btn btn-ghost text-xl"
+            class="btn btn-ghost text-2xl text-center"
             >CGPA Calculator IUB</a
           >
         </div>
@@ -53,84 +53,75 @@
 
 
     <!-- Chose GPA or CGPA -->
-    <section> 
-        <div>
-        <div role="tablist" class="tabs tabs-boxed">
-  <a role="tab" class="tab">GPA</a>
-  <a role="tab" class="tab tab-active">CGPA</a>
-  
-</div>
-    </section>
-    <!-- Header -->
-    <section>
-      <div>
-        <div>
-          <p
-            class="mt-12 flex h-3 w-full text-center justify-center text-blue-500"
-          >
-            A Cumulative Grade Point Average (CGPA) is a standardized way of
-            measuring a student's academic performance over an entire course or
-            program.
-          </p>
-        </div>
-        <div class="flex space-x-3 ">
-          <div class="border border-spacing-3 mt-7 rounded-xl shadow-2xl p-5">
-            <form
-              class="mt-10 flex justify-center "
-              action=""
-            >
-            <label class="mr-5">1.  </label>
-              <input
-                class="mr-10 bg-slate-300 p-5 h-3 fill-transparent shadow-lg rounded-sm text-black text-center"
-                type="text"
-                placeholder="Course Name"
-                name=""
-                id=""
-                
-              />
-              <input
-              
-              class="mr-10 bg-slate-300 px-7 py-5 h-3 fill-transparent shadow-lg rounded-sm text-black text-center"
-                type="number"
-                placeholder="Credit"
-                name=""
-                id=""
-                max='3'
-                min='1'
-                required
-              />
-              
-              <label class="form-control w-full max-w-xs">
-  <div class="label">
-    <span class="label-text">Choose </span>
-    <span class="label-text-alt">Grade</span>
-</div>
-<select class="select select-bordered">
-    <option disabled selected>Grade</option>
-<option>A</option>
-<option>A-</option>
-<option>B+</option>
-<option>B</option>
-<option>B-</option>
-<option>C+</option>
-<option>C</option>
-<option>C-</option>
-<option>D+</option>
-<option>D</option>
-<option>F</option>
+ <header>
+         <div role="tablist" class="tabs tabs-boxed mt-10">
+  <a role="tab" class="tab tab-active">GPA</a>
+  <a href="#" role="tab" class="tab">CGPA</a>
+</div> 
+ </header>
 
-</select>
 
-            </form>
-          </div>
-          <div class="border border-spacing-3 mt-7 rounded-xl shadow-2xl">
-            <p class="text-center my-2 text-2xl"> IUB Grade System </p>
-            <div>
-                <img src="../img/grade.png" alt="" srcset="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+ <!-- Body of the Calculator -->
+ <section class=" flex ">
+  <!-- calculator body -->
+  <div>
+
+    <div class="overflow-x-auto">
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th></th>
+        <th>Course Name </th>
+        <th>Credit</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <tr>
+        <th>1</th>
+        <td><label class="input input-bordered flex items-center gap-2">
+  <input type="text" class="grow" placeholder="Course Name" />
+  <span class="badge badge-info">Optional</span>
+</label></td>
+        <td><input
+  type="number"
+  placeholder="Credit (1-4)"
+  class="input input-bordered input-primary w-full max-w-xs"
+  max="3"
+  min="1" /></td>
+        <td>Blue</td>
+      </tr>
+      <!-- row 2 -->
+      <tr class="hover">
+        <th>2</th>
+        <td>Hart Hagerty</td>
+        <td>Desktop Support Technician</td>
+        <td>Purple</td>
+      </tr>
+      <!-- row 3 -->
+      <tr>
+        <th>3</th>
+        <td>Brice Swyre</td>
+        <td>Tax Accountant</td>
+        <td>Red</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+
+
+
+  <!-- image of Garde  -->
+  <div>
+
+  </div>
+
+ </section>
+
   </body>
 </html>

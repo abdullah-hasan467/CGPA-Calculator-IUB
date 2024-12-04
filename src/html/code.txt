@@ -1,0 +1,82 @@
+main body of the calculator
+    </section>
+    <!-- Header -->
+    <section>
+      <div>
+        <div>
+          <p
+            class="mt-12 flex h-3 w-full text-center justify-center text-blue-500"
+          >
+            A Cumulative Grade Point Average (CGPA) is a standardized way of
+            measuring a student's academic performance over an entire course or
+            program.
+          </p>
+        </div>
+        <div class="flex justify-around">
+          <div class="border flex justify-between border-spacing-3 mt-7 rounded-xl shadow-2xl p-5">
+
+  <div class="bg-red-600">
+
+    <!-- form -->
+    <form class="mt-10 flex items-center">
+      <div class="flex items-center justify-center">
+        <label class="mr-5 mt-2">1</label>
+        <input
+          class="mr-10 bg-slate-300 p-5 h-3 fill-transparent shadow-lg rounded-sm text-black text-center"
+          type="text"
+          placeholder="Course Name"
+          name=""
+          id=""
+        />
+      </div>
+
+      <div class="flex items-center">
+        <input
+          class="mr-10 bg-slate-300 px-7 py-5 h-3 fill-transparent shadow-lg rounded-sm text-black text-center"
+          type="number"
+          placeholder="Credit"
+          name=""
+          id=""
+          max="3"
+          min="1"
+          required
+        />
+      </div>
+
+
+      <div class="flex items-center">
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Choose</span>
+            <span class="label-text-alt">Grade</span>
+          </div>
+          <select class="select select-bordered">
+            <option disabled selected>Grade</option>
+            <option>A</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B</option>
+            <option>B-</option>
+            <option>C+</option>
+            <option>C</option>
+            <option>C-</option>
+            <option>D+</option>
+            <option>D</option>
+            <option>F</option>
+          </select>
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+          <div class="border border-spacing-3 mt-7 rounded-xl shadow-2xl w-1/3">
+            <p class="text-center my-2 text-2xl"> IUB Grade System </p>
+            <div>
+                <img class="" src="../img/grade.png" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
