@@ -101,53 +101,75 @@
       </div>
 
       <!-- GPA Section -->
-      <div id="gpa" class="bg-white shadow-lg p-5 rounded-lg">
+      <div id="cgpa" class="">
         <div class="overflow-x-auto">
           <table class="table">
+            <!-- head -->
             <thead>
               <tr class="hover">
                 <th class="text-lg text-center">Serial No.</th>
                 <th class="text-lg text-center">Semester Name</th>
-                <th class="text-lg text-center">Earn Credit</th>
+                <th class="text-lg text-center">Earned Credit</th>
                 <th class="text-lg text-center">GPA</th>
                 <th class="text-lg text-center">Action</th>
               </tr>
             </thead>
             <tbody id="gpaTableBody">
+              <!-- Row 1 -->
               <tr class="hover rounded-lg">
                 <th>1</th>
                 <td>
                   <label class="input input-bordered flex items-center gap-2">
-                    <input type="text" class="grow" placeholder="Summer 2024" />
+                    <input type="text" class="grow" placeholder="Course Name" />
                     <span class="badge badge-info">Optional</span>
                   </label>
                 </td>
                 <td>
-                  <input type="number" placeholder="Credit" class="input input-bordered input-primary w-full max-w-xs" max="" min="1" id="creditID-1" />
+                  <input
+                    type="number"
+                    placeholder="Credit"
+                    class="input input-bordered input-primary w-full max-w-xs"
+                    max="3"
+                    min="1"
+                    id="creditID-1"
+                  />
                 </td>
                 <td class="mt-5">
                   <div class="flex items-center">
                     <label class="form-control w-full max-w-xs">
-                        <input type="number" placeholder="GPA" class="input input-bordered input-primary w-full max-w-xs" max="4" min="0" id="creditID-1" />
+                      
+                        <input
+                    type="number"
+                    placeholder="Grade"
+                    class="input input-bordered input-primary w-full max-w-xs"
+                    max="4"
+                    min="1"
+                    id="gradeID-1"
+                  />
                       
                     </label>
                   </div>
                 </td>
                 <td class="text-center">
-                  <button onclick="deleteRow(this)" class="btn btn-warning">Delete</button>
+                  <button onclick="deleteRow(this)" class="btn btn-warning">
+                    Delete
+                  </button>
                 </td>
               </tr>
             </tbody>
           </table>
 
+          <!-- Buttons to add and delete rows -->
           <div class="flex justify-end">
-            <button onclick="addMoreRow()" class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5">
+            <button
+              onclick="addNewSemesterRow()"
+              class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5"
+            >
               Add 1 More Course
             </button>
           </div>
         </div>
       </div>
-
       <!-- Image of Grade -->
       <div class="border mt-7 rounded-xl shadow-2xl mb-10 w-1/3 h-fit p-5">
         <p class="text-center my-2 text-2xl mb-10">IUB Grade System</p>
@@ -159,15 +181,9 @@
             srcset=""
           />
         </div>
-        <button
-          onclick="calculateResult()"
-          id="hide-button"
-          class="btn mt-10 mb-10 bg-white text-black w-full hover:bg-green-900"
-        >
-          Calculate
-        </button>
-        <div class="border flex rounded-xl shadow-inner mb-10">
-          <p class="text-4xl m-10">Calculated Result:</p>
+        
+        <div class="border flex rounded-xl shadow-inner mb-10 mt-10">
+          <p class="text-4xl m-10">Calculated CGPA:</p>
           <p class="text-4xl m-10" id="showResult">0.00</p>
         </div>
       </div>
@@ -180,7 +196,9 @@
       <p class="text-lg">Copyright © Hasan © 2024 - All rights reserved</p>
     </footer>
 
-    <script src="../js/cgpa.js"></script>
-    <script src="../js/script.js"></script>
+
+    <script src="../js/cgpa.js">
+
+    </script>
   </body>
 </html>
