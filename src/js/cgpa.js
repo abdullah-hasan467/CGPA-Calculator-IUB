@@ -21,7 +21,7 @@ function addNewSemesterRow() {
         <input
           type="text"
           class="grow"
-          placeholder="Semester Name"
+          placeholder="Summer 2024"
         />
         <span class="badge badge-info">Optional</span>
       </label>
