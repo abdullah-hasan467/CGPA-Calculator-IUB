@@ -51,8 +51,8 @@
     <!-- Chose GPA or CGPA -->
     <header>
       <div role="tablist" class="tabs tabs-boxed mt-10">
-        <a role="tab" class="tab tab-active">GPA</a>
-        <a role="tab" class="tab">CGPA</a>
+        <a onclick="hideCGPA()" role="tab" class="tab tab-active" id="GPAID">GPA</a>
+        <a onclick="hideGPA()" role="tab" class="tab" id="CGPAID">CGPA</a>
       </div>
     </header>
 
@@ -62,8 +62,25 @@
 
     <!-- Body of the Calculator -->
     <section class="flex justify-around">
+
+
+<!-- calculate CGPA -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- Calculator body GPA -->
-      <div class="">
+      <div id="gpa" class="">
         <div class="overflow-x-auto">
           <table class="table">
             <!-- head -->
@@ -78,7 +95,7 @@
             </thead>
             <tbody id="gpaTableBody">
               <!-- Row 1 -->
-              <tr class="hover">
+              <tr class="hover rounded-lg">
                 <th>1</th>
                 <td>
                   <label class="input input-bordered flex items-center gap-2">
@@ -117,7 +134,7 @@
                   </div>
                 </td>
                 <td class="text-center">
-                  <button onclick="deleteRow(this)" class="btn btn-danger">Delete</button>
+                  <button onclick="deleteRow(this)" class="btn btn-warning">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -125,7 +142,7 @@
 
           <!-- Buttons to add and delete rows -->
           <div class="flex justify-end">
-            <button onclick="addMoreRow()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg m-5">Add 1 More Row</button>
+            <button onclick="addMoreRow()" class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5">Add 1 More Row</button>
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ function addMoreRow() {
       </div>
     </td>
     <td class="text-center">
-      <button onclick="deleteRow(this)" class="btn btn-danger">Delete</button>
+      <button onclick="deleteRow(this)" class="btn btn-warning">Delete</button>
     </td>
   `;
 
@@ -75,6 +75,25 @@ function updateRowSerials() {
 }
 
 // Placeholder for the GPA calculation function
-function calculateResult() {
-  console.log("Calculating GPA...");
+
+
+
+const   getID =(htmlID)=>{
+const innerID = document.getElementById(htmlID);
+return innerID;
+
+
+}
+
+
+
+
+function hideCGPA(){
+const cgpaId =  getID (CGPAID);
+const gpaID = getId (GPAID);
+const flexGPA = getId(gpa);
+const flexCGPA = getId (cgpa);
+
+
+
 }
