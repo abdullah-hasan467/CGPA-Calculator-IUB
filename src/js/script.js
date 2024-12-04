@@ -111,10 +111,12 @@ const getId = document.getElementById('gpa');
 const getId2 = document.getElementById('cgpa');
 const tabGpa = document.getElementById('gpa-tab')
 const tabCgpa = document.getElementById('cgpa-tab')
+const hideButton = document.getElementById('hide-button')
 getId.classList.add('hidden');
 getId2.classList.remove('hidden');
 tabCgpa.classList.add('tab-active');
 tabGpa.classList.remove('tab-active');
+hideButton.classList.add('hidden');
 
 
 
