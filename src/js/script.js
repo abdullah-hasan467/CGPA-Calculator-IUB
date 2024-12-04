@@ -1,99 +1,91 @@
-let rowCount = 1;  // Keep track of the number of rows
+ function calculateResult() {
+        const tableBody = document.getElementById("gpaTableBody");
+        const rows = tableBody.getElementsByTagName("tr");
 
-// Function to add a new row
-function addMoreRow() {
-  rowCount++;
-  const tableBody = document.querySelector("#gpaTableBody");
+        let totalCreditHours = 0;
+        let weightedGradePoints = 0;
 
-  // Create a new row
-  const newRow = document.createElement("tr");
-  newRow.classList.add("hover");
+        const gradePointsMap = {
+          "A": 4.00,
+          "A-": 3.70,
+          "B+": 3.30,
+          "B": 3.00,
+          "B-": 2.70,
+          "C+": 2.30,
+          "C": 2.00,
+          "C-": 1.70,
+          "D+": 1.30,
+          "D": 1.00,
+          "F": 0.00
+        };
 
-  newRow.innerHTML = `
-    <th>${rowCount}</th>
-    <td>
-      <label class="input input-bordered flex items-center gap-2">
-        <input type="text" class="grow" placeholder="Course Name" />
-        <span class="badge badge-info">Optional</span>
-      </label>
-    </td>
-    <td>
-      <input type="number" placeholder="Credit" class="input input-bordered input-primary w-full max-w-xs" max="3" min="1" id="creditID-${rowCount}" />
-    </td>
-    <td class="mt-5">
-      <div class="flex items-center">
-        <label class="form-control w-full max-w-xs">
-          <select class="select select-bordered" id="gradeID-${rowCount}">
-            <option disabled selected>Grade</option>
-            <option>A</option>
-            <option>A-</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>B-</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>C-</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>F</option>
-          </select>
-        </label>
-      </div>
-    </td>
-    <td class="text-center">
-      <button onclick="deleteRow(this)" class="btn btn-warning">Delete</button>
-    </td>
-  `;
+        for (let i = 0; i < rows.length; i++) {
+          const row = rows[i];
+          const creditInput = row.querySelector(`#creditID-${i + 1}`);
+          const gradeSelect = row.querySelector(`#gradeID-${i + 1}`);
 
-  // Append the new row to the table body
-  tableBody.appendChild(newRow);
-}
+          const creditHours = parseFloat(creditInput?.value || 0);
+          const grade = gradeSelect?.value;
 
-// Function to delete a specific row
-function deleteRow(button) {
-  const rows = document.querySelectorAll("#gpaTableBody tr");
-  
-  // Check if there is only 1 row remaining
-  if (rows.length === 1) {
-    // Display an alert if the last row is being deleted
-    alert("You cannot delete the last row.");
-    return;  // Prevent deletion if it's the last row
-  }
+          if (creditHours > 0 && grade in gradePointsMap) {
+            totalCreditHours += creditHours;
+            weightedGradePoints += gradePointsMap[grade] * creditHours;
+          }
+        }
 
-  const row = button.closest("tr"); // Get the closest row
-  row.remove(); // Remove that row
-  rowCount--; // Adjust the row count
-  updateRowSerials(); // Update the serial numbers
-}
+        const gpa = totalCreditHours > 0 ? (weightedGradePoints / totalCreditHours).toFixed(2) : "N/A";
+        const resultElement = document.getElementById("showResult");
+        resultElement.textContent = gpa;
+      }
 
-// Function to update serial numbers after a row is deleted
-function updateRowSerials() {
-  const rows = document.querySelectorAll("#gpaTableBody tr");
-  rows.forEach((row, index) => {
-    row.querySelector("th").textContent = index + 1; // Update serial number
-  });
-}
+      function addMoreRow() {
+        const tableBody = document.getElementById("gpaTableBody");
+        const rowCount = tableBody.getElementsByTagName("tr").length;
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+          <th>${rowCount + 1}</th>
+          <td>
+            <label class="input input-bordered flex items-center gap-2">
+              <input type="text" class="grow" placeholder="Course Name" />
+              <span class="badge badge-info">Optional</span>
+            </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              placeholder="Credit"
+              class="input input-bordered input-primary w-full max-w-xs"
+              max="3"
+              min="1"
+              id="creditID-${rowCount + 1}"
+            />
+          </td>
+          <td>
+            <label class="form-control w-full max-w-xs">
+              <select class="select select-bordered" id="gradeID-${rowCount + 1}">
+                <option disabled selected>Grade</option>
+                <option>A</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>B-</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>C-</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>F</option>
+              </select>
+            </label>
+          </td>
+          <td class="text-center">
+            <button onclick="deleteRow(this)" class="btn btn-warning">Delete</button>
+          </td>
+        `;
+        tableBody.appendChild(newRow);
+      }
 
-// Placeholder for the GPA calculation function
-
-
-
-const   getID =(htmlID)=>{
-const innerID = document.getElementById(htmlID);
-return innerID;
-
-
-}
-
-
-
-
-function hideCGPA(){
-const cgpaId =  getID (CGPAID);
-const gpaID = getId (GPAID);
-const flexGPA = getId(gpa);
-const flexCGPA = getId (cgpa);
-
-
-
-}
+      function deleteRow(button) {
+        const row = button.parentElement.parentElement;
+        row.remove();
+      }
