@@ -92,35 +92,35 @@ function addMoreRow() {
 
 
 
-function hideCGPA () {
-const getId = document.getElementById('cgpa');
-const getId2 = document.getElementById('gpa');
-const tabGpa = document.getElementById('gpa-tab')
-const tabCgpa = document.getElementById('cgpa-tab')
-getId.classList.add('hidden');
-getId2.classList.remove('hidden');
-tabGpa.classList.add('tab-active');
-tabCgpa.classList.remove('tab-active');
+// function hideCGPA () {
+// const getId = document.getElementById('cgpa');
+// const getId2 = document.getElementById('gpa');
+// const tabGpa = document.getElementById('gpa-tab')
+// const tabCgpa = document.getElementById('cgpa-tab')
+// getId.classList.add('hidden');
+// getId2.classList.remove('hidden');
+// tabGpa.classList.add('tab-active');
+// tabCgpa.classList.remove('tab-active');
 
-}
-
-
-
-function hideGPA () {
-const getId = document.getElementById('gpa');
-const getId2 = document.getElementById('cgpa');
-const tabGpa = document.getElementById('gpa-tab')
-const tabCgpa = document.getElementById('cgpa-tab')
-const hideButton = document.getElementById('hide-button')
-getId.classList.add('hidden');
-getId2.classList.remove('hidden');
-tabCgpa.classList.add('tab-active');
-tabGpa.classList.remove('tab-active');
-hideButton.classList.add('hidden');
+// }
 
 
 
-}
+// function hideGPA () {
+// const getId = document.getElementById('gpa');
+// const getId2 = document.getElementById('cgpa');
+// const tabGpa = document.getElementById('gpa-tab')
+// const tabCgpa = document.getElementById('cgpa-tab')
+// const hideButton = document.getElementById('hide-button')
+// getId.classList.add('hidden');
+// getId2.classList.remove('hidden');
+// tabCgpa.classList.add('tab-active');
+// tabGpa.classList.remove('tab-active');
+// hideButton.classList.add('hidden');
+
+
+
+// }
 
 
 

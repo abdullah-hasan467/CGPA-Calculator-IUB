@@ -51,10 +51,8 @@
     <!-- Choose GPA or CGPA -->
     <header>
       <div role="tablist" class="tabs tabs-boxed mt-10">
-        <a onclick="hideCGPA()" role="tab" class="tab tab-active" id="gpa-tab" 
-          >GPA</a
-        >
-        <a onclick="hideGPA()" role="tab" class="tab hidden" id="cgpa-tab" >CGPA</a>
+        <a href="../html/index.html" role="tab" class="tab" id="gpa-tab">GPA</a>
+        <a role="tab" class="tab tab-active" id="cgpa-tab">CGPA</a>
       </div>
     </header>
 
@@ -67,75 +65,83 @@
     <section class="flex justify-around">
       <!-- CGPA Section -->
 
+      <div id="cgpa" class="bg-white shadow-lg p-5 rounded-lg hidden">
+        <div class="overflow-x-auto">
+          <table class="table-auto w-full border-collapse border border-gray-300">
+            <thead>
+              <tr class="bg-gray-200 text-gray-700">
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Serial No.
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Semester Name
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Earned Credit
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  GPA
+                </th>
+                <th class="text-lg text-center border border-gray-300 py-2">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody id="cgpaTableBody">
+              <!-- Rows will be dynamically added here -->
+            </tbody>
+          </table>
+
+          <div class="flex justify-end mt-5">
+            <button onclick="addNewSemesterRow()" class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600">
+              Add 1 More Semester
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- GPA Section -->
-      <div id="gpa" class="">
+      <div id="gpa" class="bg-white shadow-lg p-5 rounded-lg">
         <div class="overflow-x-auto">
           <table class="table">
-            <!-- head -->
             <thead>
               <tr class="hover">
                 <th class="text-lg text-center">Serial No.</th>
-                <th class="text-lg text-center">Course Name</th>
-                <th class="text-lg text-center">Credit (1-3)</th>
-                <th class="text-lg text-center">Grade</th>
+                <th class="text-lg text-center">Semester Name</th>
+                <th class="text-lg text-center">Earn Credit</th>
+                <th class="text-lg text-center">GPA</th>
                 <th class="text-lg text-center">Action</th>
               </tr>
             </thead>
             <tbody id="gpaTableBody">
-              <!-- Row 1 -->
               <tr class="hover rounded-lg">
                 <th>1</th>
                 <td>
                   <label class="input input-bordered flex items-center gap-2">
-                    <input type="text" class="grow" placeholder="Course Name" />
+                    <input type="text" class="grow" placeholder="Summer 2024" />
                     <span class="badge badge-info">Optional</span>
                   </label>
                 </td>
                 <td>
-                  <input
-                    type="number"
-                    placeholder="Credit"
-                    class="input input-bordered input-primary w-full max-w-xs"
-                    max="3"
-                    min="1"
-                    id="creditID-1"
-                  />
+                  <input type="number" placeholder="Credit" class="input input-bordered input-primary w-full max-w-xs" max="" min="1" id="creditID-1" />
                 </td>
                 <td class="mt-5">
                   <div class="flex items-center">
                     <label class="form-control w-full max-w-xs">
-                      <select class="select select-bordered" id="gradeID-1">
-                        <option disabled selected>Grade</option>
-                        <option>A</option>
-                        <option>A-</option>
-                        <option>B+</option>
-                        <option>B</option>
-                        <option>B-</option>
-                        <option>C+</option>
-                        <option>C</option>
-                        <option>C-</option>
-                        <option>D+</option>
-                        <option>D</option>
-                        <option>F</option>
-                      </select>
+                        <input type="number" placeholder="GPA" class="input input-bordered input-primary w-full max-w-xs" max="4" min="0" id="creditID-1" />
+                      
                     </label>
                   </div>
                 </td>
                 <td class="text-center">
-                  <button onclick="deleteRow(this)" class="btn btn-warning">
-                    Delete
-                  </button>
+                  <button onclick="deleteRow(this)" class="btn btn-warning">Delete</button>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <!-- Buttons to add and delete rows -->
           <div class="flex justify-end">
-            <button
-              onclick="addMoreRow()"
-              class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5"
-            >
+            <button onclick="addMoreRow()" class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5">
               Add 1 More Course
             </button>
           </div>
@@ -154,14 +160,15 @@
           />
         </div>
         <button
-          onclick="calculateResult()" id="hide-button"
+          onclick="calculateResult()"
+          id="hide-button"
           class="btn mt-10 mb-10 bg-white text-black w-full hover:bg-green-900"
         >
           Calculate
         </button>
         <div class="border flex rounded-xl shadow-inner mb-10">
           <p class="text-4xl m-10">Calculated Result:</p>
-          <p class="text-4xl m-10" id="showResult">N/A</p>
+          <p class="text-4xl m-10" id="showResult">0.00</p>
         </div>
       </div>
     </section>
