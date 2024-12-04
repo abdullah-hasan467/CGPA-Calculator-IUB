@@ -125,16 +125,22 @@ hideButton.classList.add('hidden');
 
 
 
-  function deleteRow(button) {
+function deleteRow(button) {
     const row = button.parentElement.parentElement;
     const tableBody = document.getElementById("gpaTableBody");
-    row.remove();
+
+    // Check if there is more than one row
+    if (tableBody.rows.length > 1) {
+        row.remove(); // Remove the row if there is more than one
+    } else {
+        alert("At least one row must remain!");
+    }
 
     // Re-index remaining rows
     const rows = tableBody.getElementsByTagName("tr");
     for (let i = 0; i < rows.length; i++) {
-      rows[i].querySelector("th").textContent = i + 1;
-      rows[i].querySelector("input[type='number']").id = `creditID-${i + 1}`;
-      rows[i].querySelector("select").id = `gradeID-${i + 1}`;
+        rows[i].querySelector("th").textContent = i + 1; // Update row number
+        rows[i].querySelector("input[type='number']").id = `creditID-${i + 1}`; // Update credit input ID
+        rows[i].querySelector("select").id = `gradeID-${i + 1}`; // Update grade select ID
     }
-  }
+}

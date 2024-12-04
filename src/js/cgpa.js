@@ -14,7 +14,7 @@ function addNewSemesterRow() {
   const row = document.createElement("tr");
   row.classList.add("hover", "rounded-lg");
 
-  row.innerHTML = `
+  row.innerHTML = 
     <th>${rowCount}</th>
     <td>
       <label class="input input-bordered flex items-center gap-2">
@@ -50,7 +50,7 @@ function addNewSemesterRow() {
         Delete
       </button>
     </td>
-  `;
+  ;
 
   tableBody.appendChild(row);
 }
