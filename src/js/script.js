@@ -11,6 +11,9 @@ const getID = (inputID) => {
 // Call the function with the ID as a string
 getID('creditID');
 
+function calculateResult(){
+console.log("Hlw")
+}
 
 
 
