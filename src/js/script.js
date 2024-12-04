@@ -85,6 +85,8 @@
         tableBody.appendChild(newRow);
       }
 
+      
+
       function deleteRow(button) {
         const row = button.parentElement.parentElement;
         row.remove();
