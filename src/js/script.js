@@ -1,23 +1,4 @@
-const getID = (inputID) => {
-  const element = document.getElementById(inputID); // Correctly fetch the element
-  if (element) {
-    const inputValue = element.value; // Get the value of the input field
-    console.log(inputValue); // Log the value
-  } else {
-    console.error(`Element with ID '${inputID}' not found.`);
-  }
-};
-
-// Call the function with the ID as a string
-getID('creditID');
-
-function calculateResult(){
-console.log("Hlw")
-}
-
-
-
-let rowCount = 1;
+let rowCount = 1;  // Keep track of the number of rows
 
 // Function to add a new row
 function addMoreRow() {
@@ -70,6 +51,15 @@ function addMoreRow() {
 
 // Function to delete a specific row
 function deleteRow(button) {
+  const rows = document.querySelectorAll("#gpaTableBody tr");
+  
+  // Check if there is only 1 row remaining
+  if (rows.length === 1) {
+    // Display an alert if the last row is being deleted
+    alert("You cannot delete the last row.");
+    return;  // Prevent deletion if it's the last row
+  }
+
   const row = button.closest("tr"); // Get the closest row
   row.remove(); // Remove that row
   rowCount--; // Adjust the row count
@@ -88,16 +78,3 @@ function updateRowSerials() {
 function calculateResult() {
   console.log("Calculating GPA...");
 }
-
-
-
-
-
-
-const displayResult = (calculatedResult) =>{
-
-}
-
-
-
-
