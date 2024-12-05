@@ -93,15 +93,6 @@
               <!-- Rows will be dynamically added here -->
             </tbody>
           </table>
-
-          <div class="flex justify-end mt-5">
-            <button
-              onclick="addNewSemesterRow()"
-              class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
-            >
-              Add 1 More Semester
-            </button>
-          </div>
         </div>
       </div>
 
@@ -163,13 +154,29 @@
           </table>
 
           <!-- Buttons to add and delete rows -->
-          <div class="flex justify-end">
+          <div class="flex justify-between">
+<div class="">
+            <button
+              onclick="ResetAll()"
+              class="btn btn-error sm:btn-sm md:btn-md lg:btn-lg m-5"
+            >
+              Reset
+            </button>
+          </div>
+
+          <div class="">
             <button
               onclick="addNewSemesterRow()"
               class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5"
             >
               Add 1 More Course
             </button>
+          </div>
+
+
+
+
+
           </div>
         </div>
       </div>

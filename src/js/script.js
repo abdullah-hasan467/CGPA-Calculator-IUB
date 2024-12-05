@@ -123,6 +123,35 @@ function addMoreRow() {
 // }
 
 
+function Reset() {
+    const tableBody = document.getElementById("gpaTableBody");
+    const rows = tableBody.getElementsByTagName("tr");
+
+    // Clear all input fields in the table
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+
+        const creditInput = row.querySelector("input[type='number']");
+        const gradeSelect = row.querySelector("select");
+
+        // Reset the values
+        creditInput.value = "";
+        gradeSelect.selectedIndex = 0; // Reset to the first option (Grade)
+    }
+
+    // Set the "Calculated GPA" back to N/A
+    const resultElement = document.getElementById("showResult");
+    resultElement.textContent = "N/A";
+
+    // Optionally, if you want to reset the table to only have the first row
+    while (rows.length > 1) {
+        rows[1].remove(); // Remove rows after the first one
+    }
+}
+
+
+
+
 
 
 function deleteRow(button) {

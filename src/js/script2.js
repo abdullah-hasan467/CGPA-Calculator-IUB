@@ -115,3 +115,17 @@ function calculateGPA() {
 document.addEventListener("DOMContentLoaded", () => {
   ensureMinimumRow();
 });
+
+
+// Function to reset all rows and CGPA
+function ResetAll() {
+  // Clear the table body
+  const tableBody = document.getElementById("gpaTableBody");
+  tableBody.innerHTML = ""; // Removes all rows
+
+  // Ensure at least one row is present after reset
+  ensureMinimumRow();
+
+  // Reset the calculated CGPA to 0.00
+  document.getElementById("showResult").textContent = "0.00";
+}
