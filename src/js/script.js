@@ -133,7 +133,7 @@ function deleteRow(button) {
     if (tableBody.rows.length > 1) {
         row.remove(); // Remove the row if there is more than one
     } else {
-        alert("At least one row must remain!");
+        alert("At least one Course must remain!");
     }
 
     // Re-index remaining rows

@@ -71,7 +71,7 @@ function deleteRow(button) {
         // Re-index the remaining rows
         reIndexRows();
     } else {
-        alert("At least one row must remain!");
+        alert("At least one Semester must remain!");
     }
 
     // Recalculate GPA after removing a row
