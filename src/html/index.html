@@ -7,8 +7,7 @@
     <title>IUB GPA Calculator</title>
   </head>
 
-  <body class="ml-10 mr-5 space-y-2 ">
-    
+  <body class="ml-10 mr-5 space-y-2">
     <header>
       <div class="navbar bg-base-100">
         <div class="flex-1">
@@ -18,7 +17,6 @@
             class="btn btn-ghost text-2xl text-center"
             >GPA Calculator IUB</a
           >
-          
         </div>
         <div class="flex-none">
           <div class="dropdown dropdown-end"></div>
@@ -51,13 +49,11 @@
       </div>
     </header>
 
-
-
-<div class="avatar flex justify-center">
-  <div class="w-72 rounded-xl">
-    <img src="https://iub.ac.bd/meta_logo.png" />
-  </div>
-</div>
+    <div class="avatar flex justify-center">
+      <div class="w-72 rounded-xl">
+        <img src="https://iub.ac.bd/meta_logo.png" />
+      </div>
+    </div>
 
     <!-- Choose GPA or CGPA -->
     <header>
@@ -152,7 +148,13 @@
                 Reset
               </button>
             </div>
-
+            <button
+              onclick="calculateResult()"
+              id="hide-button"
+              class="btn mt-10 mb-10 bg-white text-black w-1/3 hover:bg-green-900"
+            >
+              Calculate GPA
+            </button>
             <div class="">
               <button
                 onclick="addMoreRow()"
@@ -176,14 +178,8 @@
             srcset=""
           />
         </div>
-        <button
-          onclick="calculateResult()"
-          id="hide-button"
-          class="btn mt-10 mb-10 bg-white text-black w-full hover:bg-green-900"
-        >
-          Calculate GPA
-        </button>
-        <div class="border flex rounded-xl shadow-inner mb-10">
+
+        <div class="border flex rounded-xl shadow-inner mb-10 mt-10">
           <p class="text-4xl m-10">Calculated GPA:</p>
           <p class="text-4xl m-10" id="showResult">N/A</p>
         </div>
