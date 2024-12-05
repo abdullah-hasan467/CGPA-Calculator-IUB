@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../css/output.css" />
     <title>IUB GPA Calculator</title>
   </head>
+  
   <body class="ml-10 mr-5 space-y-2">
+    
     <header>
       <div class="navbar bg-base-100">
         <div class="flex-1">
@@ -16,6 +18,7 @@
             class="btn btn-ghost text-2xl text-center"
             >GPA Calculator IUB</a
           >
+          
         </div>
         <div class="flex-none">
           <div class="dropdown dropdown-end"></div>
@@ -48,6 +51,14 @@
       </div>
     </header>
 
+
+
+<div class="avatar flex justify-center">
+  <div class="w-72 rounded-xl">
+    <img src="https://iub.ac.bd/meta_logo.png" />
+  </div>
+</div>
+
     <!-- Choose GPA or CGPA -->
     <header>
       <div role="tablist" class="tabs tabs-boxed mt-10">
@@ -58,9 +69,7 @@
           id="gpa-tab"
           >GPA</a
         >
-        <a href="./index2.html" role="tab" class="tab" id="cgpa-tab"
-          >CGPA</a
-        >
+        <a href="./index2.html" role="tab" class="tab" id="cgpa-tab">CGPA</a>
       </div>
     </header>
 
@@ -136,27 +145,22 @@
           <!-- Buttons to add and delete rows -->
           <div class="flex justify-between">
             <div class="">
-            <button
-              onclick="Reset()"
-              class="btn btn-error sm:btn-sm md:btn-md lg:btn-lg m-5"
-            >
-              Reset
-            </button>
+              <button
+                onclick="Reset()"
+                class="btn btn-error sm:btn-sm md:btn-md lg:btn-lg m-5"
+              >
+                Reset
+              </button>
+            </div>
 
-          </div>
-
-          <div class="">
-            <button
-              onclick="addMoreRow()"
-              class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5"
-            >
-              Add 1 More Course
-            </button>
-
-          </div>
-
-
-
+            <div class="">
+              <button
+                onclick="addMoreRow()"
+                class="btn btn-accent sm:btn-sm md:btn-md lg:btn-lg m-5"
+              >
+                Add 1 More Course
+              </button>
+            </div>
           </div>
         </div>
       </div>
