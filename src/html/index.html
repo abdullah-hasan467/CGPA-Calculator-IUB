@@ -151,13 +151,7 @@
                 Reset
               </button>
             </div>
-            <button
-              onclick="calculateResult()"
-              id="hide-button"
-              class="btn mt-10 mb-10 bg-white text-black w-1/3 hover:bg-green-900"
-            >
-              Calculate GPA
-            </button>
+
             <div class="">
               <button
                 onclick="addMoreRow()"
@@ -169,6 +163,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- Image of Grade -->
       <div class="border mt-7 rounded-xl shadow-2xl mb-10 w-1/3 h-fit p-5">
@@ -186,7 +181,12 @@
           <p class="text-4xl m-10">Calculated GPA:</p>
           <p class="text-4xl m-10" id="showResult">N/A</p>
         </div>
+        <div>
+  <p class="text-2xl m-3">Total Credits: <span id="totalCredits">0</span></p>
+  <p id="warningMessage" style="color: red; display: none;">Warning: You cannot exceed 18 credits!</p>
+</div>
       </div>
+      
     </section>
 
     <!-- Footer -->
