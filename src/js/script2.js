@@ -1,9 +1,56 @@
-// Ensure at least one row remains
-function ensureMinimumRow() {
+// Function to calculate GPA and total earned credits
+function calculateGPA() {
   const tableBody = document.getElementById("gpaTableBody");
-  if (tableBody.rows.length === 0) {
-    addNewSemesterRow();
+  let totalCredits = 0;
+  let weightedSum = 0;
+
+  // Iterate through all the rows to calculate total credits and weighted sum
+  for (const row of tableBody.rows) {
+    const creditInput = row.querySelector("input[id^='creditID']");
+    const gpaInput = row.querySelector("input[id^='gradeID']");
+
+    const credit = parseFloat(creditInput.value) || 0;
+    const gpa = parseFloat(gpaInput.value) || 0;
+
+    totalCredits += credit;
+    weightedSum += credit * gpa;
   }
+
+  // Update total earned credits display
+  document.getElementById("totalCredits").textContent = totalCredits;
+
+  // Handle credit warning
+  if (totalCredits > 18) {
+    document.getElementById("warningMessage").style.display = "block"; // Show warning
+  } else {
+    document.getElementById("warningMessage").style.display = "none"; // Hide warning
+  }
+
+  // Calculate and display the GPA
+  const result = totalCredits > 0 ? (weightedSum / totalCredits).toFixed(2) : "0.00";
+  document.getElementById("showResult").textContent = result;
+}
+
+// Function to reset all rows and CGPA
+function ResetAll() {
+  // Clear the table body
+  const tableBody = document.getElementById("gpaTableBody");
+  tableBody.innerHTML = ""; // Removes all rows
+
+  // Ensure at least one row is present after reset
+  ensureMinimumRow();
+
+  // Reset the calculated CGPA to 0.00
+  document.getElementById("showResult").textContent = "0.00";
+  
+  // Reset total earned credits to 00
+  document.getElementById("totalCredits").textContent = "00";
+
+  // Hide the warning message
+  document.getElementById("warningMessage").style.display = "none";
+
+  // Recalculate GPA
+  calculateGPA();
 }
 
 // Function to add a new semester row
@@ -88,44 +135,4 @@ function reIndexRows() {
     rows[i].querySelector("input[type='number'][id^='creditID']").id = `creditID-${i + 1}`; // Update credit input ID
     rows[i].querySelector("input[type='number'][id^='gradeID']").id = `gradeID-${i + 1}`; // Update grade input ID
   }
-}
-
-// Function to calculate GPA
-function calculateGPA() {
-  const tableBody = document.getElementById("gpaTableBody");
-  let totalCredits = 0;
-  let weightedSum = 0;
-
-  for (const row of tableBody.rows) {
-    const creditInput = row.querySelector("input[id^='creditID']");
-    const gpaInput = row.querySelector("input[id^='gradeID']");
-
-    const credit = parseFloat(creditInput.value) || 0;
-    const gpa = parseFloat(gpaInput.value) || 0;
-
-    totalCredits += credit;
-    weightedSum += credit * gpa;
-  }
-
-  const result = totalCredits > 0 ? (weightedSum / totalCredits).toFixed(2) : "0.00";
-  document.getElementById("showResult").textContent = result;
-}
-
-// Initial setup: Ensure one row is always present
-document.addEventListener("DOMContentLoaded", () => {
-  ensureMinimumRow();
-});
-
-
-// Function to reset all rows and CGPA
-function ResetAll() {
-  // Clear the table body
-  const tableBody = document.getElementById("gpaTableBody");
-  tableBody.innerHTML = ""; // Removes all rows
-
-  // Ensure at least one row is present after reset
-  ensureMinimumRow();
-
-  // Reset the calculated CGPA to 0.00
-  document.getElementById("showResult").textContent = "0.00";
 }
