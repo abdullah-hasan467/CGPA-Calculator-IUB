@@ -2346,6 +2346,18 @@ input.tab:checked + .tab-content,
   margin-top: 1.75rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.-mt-5 {
+  margin-top: -1.25rem;
+}
+
+.-mt-56 {
+  margin-top: -14rem;
+}
+
 .flex {
   display: flex;
 }
@@ -2516,6 +2528,11 @@ input.tab:checked + .tab-content,
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-black {
